@@ -15,23 +15,10 @@ namespace ToolsQA.Selenium_Basics
         {
 
             IWebDriver driver = new FirefoxDriver();
-            driver.Navigate().GoToUrl("http://toolsqa.com/automation-practice-switch-windows/");
-            IWebElement element = driver.FindElement(By.Id("clock"));
-            DefaultWait<IWebElement> wait = new DefaultWait<IWebElement>(element);
-            wait.Timeout = TimeSpan.FromMinutes(2);
-            wait.PollingInterval = TimeSpan.FromMilliseconds(250);
+            driver.Navigate().GoToUrl("https://www.gmail.com");
+            IWebElement element = driver.FindElement(By.Id("Email"));
 
-            Func<IWebElement, bool> waiter = new Func<IWebElement, bool>((IWebElement ele) =>
-            {
-                String styleAttrib = element.Text;
-                if (styleAttrib.Contains("Buzz"))
-                {
-                    return true;
-                }
-                Console.WriteLine("Current time is " + styleAttrib);
-                return false;
-            });
-            wait.Until(waiter);
+            element.SendKeys("sreenathdmr");
 
         }
     }
