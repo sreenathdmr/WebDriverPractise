@@ -18,7 +18,7 @@ namespace ToolsQA.Selenium_Basics
             driver.Navigate().GoToUrl("https://www.gmail.com");
             IWebElement element = driver.FindElement(By.Id("Email"));
 
-            element.SendKeys("sreenathdmr");
+            element.SendKeys("sreenathdm");
 
         }
     }
